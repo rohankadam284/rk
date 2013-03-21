@@ -68,6 +68,7 @@
 ;    This library is distributed in the hope that it will be useful for
 ;    science and education but WITHOUT ANY WARRANTY that it will always
 ;    fit the requirement.
+;    See the REFERENCE above for other possible restrictions.
 ; 
 ;-
 FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
