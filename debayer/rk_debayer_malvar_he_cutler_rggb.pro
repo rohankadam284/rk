@@ -103,9 +103,9 @@ FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
                   ;The pixel at x,y is a Red pixel
                   R_image_matrix[x-2,y-2] = b_input_image[x,y]
                   ;Calculate green pixel at x,y
-                  G_image_matrix[x-2,y-2] =(                                   - b_input_image[x-2,y] $
+                  G_image_matrix[x-2,y-2] =(                                  - b_input_image[x-2,y] $
                                                                               + 2*b_input_image[x-1,y] $
-                                - b_input_image[x,y-2] + 2*b_input_image[x,y-1] + 4*b_input_image[x,y]   + 2*b_input_image[x,y+1] - b_input_image[x,y+2] $
+                              - b_input_image[x,y-2] + 2*b_input_image[x,y-1] + 4*b_input_image[x,y]       + 2*b_input_image[x,y+1] - b_input_image[x,y+2] $
                                                                               + 2*b_input_image[x+1,y] $
                                                                               - b_input_image[x+2,y] $
                                            )/8
@@ -122,17 +122,17 @@ FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
                   G_image_matrix[x-2,y-2] = b_input_image[x,y]
 
                   ;Calculate Red value at x,y
-                  R_image_matrix[x-2,y-2] = (                                 (1*b_input_image[x-2,y])/2 $
+                  R_image_matrix[x-2,y-2] = (                                 b_input_image[x-2,y]/2 $
                                                   -   b_input_image[x-1,y-1] +        0                    - b_input_image[x-1,y+1] $
                            - b_input_image[x,y-2] + 4*b_input_image[x,y-1]   + 5*b_input_image[x,y]        + 4*b_input_image[x,y+1]    - b_input_image[x,y+2] $
                                                   - b_input_image[x+1,y-1]   +        0                    - b_input_image[x+1,y+1] $
                                                                              + (b_input_image[x+2,y])/2 $
                                            )/8
-                  ;Calculate Green Value at x,y
+                  ;Calculate blue Value at x,y
                   B_image_matrix[x-2,y-2] =(                                 - b_input_image[x-2,y] $
-                                                  -   b_input_image[x-1,y-1] +        0                    - b_input_image[x-1,y+1] $
-                         + b_input_image[x,y-2]/2 + 4*b_input_image[x,y-1]   + 5*b_input_image[x,y]        + 4*b_input_image[x,y+1]    + b_input_image[x,y+2]/2 $
-                                                  - b_input_image[x+1,y-1]   +        0                    - b_input_image[x+1,y+1] $
+                                                  -   b_input_image[x-1,y-1] + 4*b_input_image[x-1,y]    - b_input_image[x-1,y+1] $
+                         + b_input_image[x,y-2]/2 +            0             + 5*b_input_image[x,y]      +           0                 + b_input_image[x,y+2]/2 $
+                                                  - b_input_image[x+1,y-1]   + 4*b_input_image[x+1,y]    - b_input_image[x+1,y+1] $
                                                                              -  b_input_image[x+2,y] $
                                            )/8
               endelse
@@ -150,7 +150,7 @@ FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
                                            )/8
 
                   ;Calculate green value at x,y
-                  G_image_matrix[x-2,y-2] = (                                   - b_input_image[x-2,y] $
+                  G_image_matrix[x-2,y-2] = (                                 - b_input_image[x-2,y] $
                                                                               + 2*b_input_image[x-1,y] $
                               - b_input_image[x,y-2] + 2*b_input_image[x,y-1] + 4*b_input_image[x,y]       + 2*b_input_image[x,y+1] - b_input_image[x,y+2] $
                                                                               + 2*b_input_image[x+1,y] $
@@ -161,17 +161,17 @@ FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
                   G_image_matrix[x-2,y-2] = b_input_image[x,y]
                   ;Calculate red value at x,y
                   R_image_matrix[x-2,y-2] = (                                 - b_input_image[x-2,y] $
-                                                    - b_input_image[x-1,y-1]  +        0                 - b_input_image[x-1,y+1] $
-                           + b_input_image[x,y-2]/2 + 4*b_input_image[x,y-1]  + 5*b_input_image[x,y]     + 4*b_input_image[x,y+1]    + b_input_image[x,y+2]/2 $
-                                                    - b_input_image[x+1,y-1]  +        0                 - b_input_image[x+1,y+1] $
+                                                    - b_input_image[x-1,y-1]  + 4*b_input_image[x-1,y]   - b_input_image[x-1,y+1] $
+                           + b_input_image[x,y-2]/2 +         0               + 5*b_input_image[x,y]     +         0                 + b_input_image[x,y+2]/2 $
+                                                    - b_input_image[x+1,y-1]  + 4*b_input_image[x+1,y]   - b_input_image[x+1,y+1] $
                                                                               -  b_input_image[x+2,y] $
                                            )/8
                   ;Calculate green value at x,y
-                  B_image_matrix[x-2,y-2] = (                                  (1*b_input_image[x-2,y])/2 $
+                  B_image_matrix[x-2,y-2] = (                                  b_input_image[x-2,y]/2 $
                                                   -   b_input_image[x-1,y-1] +        0                    - b_input_image[x-1,y+1] $
                            - b_input_image[x,y-2] + 4*b_input_image[x,y-1]   + 5*b_input_image[x,y]        + 4*b_input_image[x,y+1]    - b_input_image[x,y+2] $
                                                   - b_input_image[x+1,y-1]   +        0                    - b_input_image[x+1,y+1] $
-                                                                             + (b_input_image[x+2,y])/2 $
+                                                                             + b_input_image[x+2,y]/2 $
                                            )/8
               endelse
           endelse
