@@ -1,6 +1,6 @@
 ;+
-;IDL IMPLEMENTATION FOR MALVAR HE CUTLER INTERPOLATION ALGORITHM 
-;NAME:
+; IDL IMPLEMENTATION FOR MALVAR HE CUTLER INTERPOLATION ALGORITHM 
+; NAME:
 ;    rk_debayer_malvar_he_cutler_rggb
 ;
 ; PURPOSE:
@@ -8,10 +8,12 @@
 ;    0,0 is R and returns a combined array containing the debayered arrays R, G,
 ;    and B.
 ;
-; REFERENCE :
-; High-quality linear interpolation for demosaicing of Bayer-patterned color images
-; By Henrique S. Malvar, Li-wei He, and Ross Cutler
-; http://research.microsoft.com/~rcutler/pub/Demosaicing_ICASSP04.pdf
+; REFERENCE:
+;    High-quality linear interpolation for demosaicing of Bayer-patterned color images
+;    By Henrique S. Malvar, Li-wei He, and Ross Cutler
+;      http://research.microsoft.com/~rcutler/pub/Demosaicing_ICASSP04.pdf
+;    RK_DEBAYER_MALVAR_HE_CUTLER_RGGB.PRO may be linked to U.S. Patent 7502505 by 
+;    Henrique S. Malvar, Li-wei He, and Ross Cutler
 ;
 ; CATEGORY:
 ;   Interpolation algorithm
@@ -50,7 +52,6 @@
 ; TODO:
 ;
 ; EXAMPLE:
-;   IDL> a = mer_readpds('/ods/surface/sol/00177/soas/edr/mcam/0177ML0949000000C0_DXXX.IMG')
 ;   IDL> help, a
 ;   A               BYTE      = Array[1344, 1200]
 ;   IDL> b = rk_debayer_malvar_he_cutler_rggb(a)
@@ -67,10 +68,9 @@
 ;    This library is distributed in the hope that it will be useful for
 ;    science and education but WITHOUT ANY WARRANTY that it will always
 ;    fit the requirement.
+;    See the REFERENCE above for other possible restrictions.
 ; 
 ;-
-
-
 FUNCTION rk_debayer_malvar_he_cutler_rggb, IMAGE_ARRAY
   ;get input image array size
   image_array_size = size(image_array)
