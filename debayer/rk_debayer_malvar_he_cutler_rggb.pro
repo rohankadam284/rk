@@ -1,5 +1,6 @@
 ;+
-; NAME:
+;IDL IMPLEMENTATION FOR MALVAR DE CUTLER INTERPOLATION ALGORITHM 
+;NAME:
 ;    rk_debayer_malvar_he_cutler_rggb
 ;
 ; PURPOSE:
